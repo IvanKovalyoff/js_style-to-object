@@ -12,17 +12,15 @@ function convertToObject(sourceString) {
   let array = [];
   const words = newString.split(';');
 
-  if (sourceString === '' || undefined) {
+  if (newString === '' || newString === undefined) {
     return result;
   }
 
   for (const i of words) {
-    array = i.split(': ');
+    array = i.split(':');
 
     if (array.length > 1) {
       array[1] = array[1].trim();
-      array[1] = array[1].split(' ');
-      array[1] = array[1].join(' ');
 
       if (array[1].includes(',')) {
         array[1] = array[1].split(',');
